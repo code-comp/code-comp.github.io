@@ -12,11 +12,11 @@ Group 11 project for SEG 2900 at uOttawa
 
 # Codes Comp
 - [Description](#description)
-- 
+
 - [How To Use](#how-to-use)
-- 
+
 - [License](#license)
-- 
+
 - [Authors Info](#author-info)
 
 ---
