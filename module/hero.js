@@ -67,7 +67,7 @@ function addTablet(color) {
 	const rectangle = new THREE.Mesh(geometry, material);
 
 	// Draw text
-	new FontLoader().load("../fonts/Lato_Regular.json", font => {
+	new FontLoader().load("../assets/Lato_Regular.json", font => {
 		const material = new THREE.MeshLambertMaterial({ color: 0x000000 });
 		const geometry = new TextGeometry(">_", {
 			font: font,
