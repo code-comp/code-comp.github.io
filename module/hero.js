@@ -13,6 +13,7 @@ container.appendChild(renderer.domElement);
 
 // Create a camera
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+camera.zoom = innerWidth / 1000;
 camera.position.setZ(10);
 
 // Create a scene
@@ -36,13 +37,14 @@ while (i < 15) {
 addEventListener("resize", () => {
 	renderer.setSize(container.clientWidth, container.clientHeight);
 	camera.aspect = container.clientWidth / container.clientHeight;
+	camera.zoom = innerWidth / 1000;
 	camera.updateProjectionMatrix();
 });
 
 // Move tablets based on mouse movement
-addEventListener("pointermove", ({ movementX, movementY }) =>
-	tablets.forEach(tablet => moveTablet(tablet, movementX, movementY)),
-);
+addEventListener("pointermove", ({ movementX, movementY }) => {
+	tablets.forEach(tablet => moveTablet(tablet, movementX, movementY));
+});
 
 addEventListener("scroll", () => {
 	// Zoom camera in and out based on mouse wheel
@@ -83,8 +85,8 @@ function addTablet(color) {
 	group.add(rectangle);
 	group.position.set(
 		(Math.random() * innerWidth - innerWidth / 2) / 50,
-		(Math.random() * innerHeight - innerHeight / 1.25) / 75,
-		(Math.random() * innerWidth - innerWidth / 2) / 75,
+		(Math.random() * innerHeight - innerHeight / 1.25) / 50,
+		(Math.random() * innerWidth - innerWidth / 2) / 50,
 	);
 
 	scene.add(group);

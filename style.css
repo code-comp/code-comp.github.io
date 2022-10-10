@@ -49,6 +49,7 @@ section {
 	z-index: -1;
 	-webkit-mask-image: linear-gradient(to bottom, var(--color-background) 75%, transparent);
 	mask-image: linear-gradient(to bottom, var(--color-background) 75%, transparent);
+	touch-action: none;
 }
 
 #hero #play {
