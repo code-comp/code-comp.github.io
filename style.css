@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--color-light: hsl(220, 80%, 90%);
+	--color-dark: hsl(220, 80%, 10%);
+	--color-primary: hsl(220, 80%, 50%);
+	--color-secondary: hsl(220, 80%, 30%);
+	--color-tertiary: hsl(220, 80%, 70%);
+	--color-background: hsl(220, 30%, 10%);
+
+	scroll-behavior: smooth;
+	scroll-snap-type: y proximity;
+}
+
+body {
+	margin: 0;
+	font-family: "Lato", sans-serif;
+	padding-block: min(10vh, 10rem);
+	padding-inline: min(10vw, 10rem);
+	overflow-x: hidden;
+	color: white;
+	background-color: var(--color-background);
+}
+
+section {
+	scroll-snap-align: start;
+}
+
+#hero {
+	position: absolute;
+	inset: 0;
+}
+
+#hero h1 {
+	z-index: 1;
+	position: absolute;
+	inset: min(14vw, 5rem) 0 auto 0;
+	margin: 0;
+	font-size: min(14vw, 5rem);
+	text-align: center;
+	color: var(--color-light);
+}
+
+#hero canvas {
+	z-index: -1;
+	-webkit-mask-image: linear-gradient(to bottom, var(--color-background) 75%, transparent);
+	mask-image: linear-gradient(to bottom, var(--color-background) 75%, transparent);
+	touch-action: none;
+}
+
+#hero #play {
+	z-index: 1;
+	position: absolute;
+	inset: auto 0 0 0;
+	padding-bottom: min(7vw, 2.5rem);
+	text-align: center;
+	font-size: min(7vw, 2.5rem);
+	text-decoration: none;
+	background: none;
+	border: none;
+	color: var(--color-tertiary);
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+#hero #play:hover {
+	color: var(--color-primary);
+	transform: scale(1.1);
+}
+
+#hero + section {
+	margin-top: calc(100vh - min(14vw, 5rem) + min(7vw, 2.5rem));
+}
