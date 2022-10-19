@@ -16,11 +16,9 @@ Group 11 project for SEG 2900 at uOttawa.
 
 - [Authors Info](#authors-info)
 
-## Description
-
-Codes-Comp is a website that measures and contributes to users' coding skills by competing with their opponents. Making players have critical and problem-solving approaches found by the users will also increase the person's self-confidence when it gives the same result as other solutions. It is encouraged to try different solutions to increase creativity from different perspectives. Through this competition in the game, players compete with each other under the same goal, which leads them to focus on their goals and improve their coding skills.
-
 ## Features
+
+Code Comp is a website that allows users to compete against each other in a variety of coding challenges. Players can create their own challenges, or compete in challenges created by other users. The challenges are graded automatically, and the results are displayed on the leaderboard. The leaderboard is sorted by the number of points a user has earned. The points are earned by completing challenges, and the number of points earned is determined by the difficulty of the challenge.
 
 ## Screenshots
 
