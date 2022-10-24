@@ -28,7 +28,7 @@ Code Comp is a website that allows users to compete against each other in a vari
 
 MIT License
 
-Copyright © 2022 Nimet Kurnaz, Daniel Thorp, Mehdi Dahamna, Peter Bou-Farah, Kyle Labelle]
+Copyright © 2022 Nimet Kurnaz, Daniel Thorp, Mehdi Dahamna, Peter Bou-Farah, Kyle Labelle
 
 ## Authors Info
 
