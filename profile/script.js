@@ -10,11 +10,11 @@ const userInfo = {
 const output = document.querySelector("#output");
 
 output.innerHTML =
-	"Username: " +
+	"<br>Username: " +
 	userInfo.username +
-	"<br>First Name: " +
+	"<br><br>First Name: " +
 	userInfo.name.first +
-	"<br>Last Name: " +
+	"<br><br>Last Name: " +
 	userInfo.name.last +
-	"<br>Email Address: " +
+	"<br><br>Email Address: " +
 	userInfo.email;
