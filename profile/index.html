@@ -35,14 +35,55 @@
 			</div>
 			<div id="buttons">
 				<br>
-				<button class="button">Edit Username</button>
+				<button class="button" onclick="openFormUsername()">Edit Username</button>
 				<br><br>
-				<button class="button">Edit First Name</button>
+				<button class="button" onclick="openFormFname()">Edit First Name</button>
 				<br><br>
-				<button class="button">Edit Last Name</button>
+				<button class="button" onclick="openFormLname()">Edit Last Name</button>
 				<br><br>
-				<button class="button">Edit Email Adress</button>
+				<button class="button" onclick="openFormEmail()">Edit Email Adress</button>
 			</div>
+
+			<div class="popup" id="username-popup">
+				<form action="placeholder" class="form-container">
+					<label for="username"><b>Username</b></label>
+					<input type="text" placeholder="New Username" name="username" required>
+
+					<button type="submit" class="button">Confirm</button>
+					<button type="button" class="button" onclick="closeFormUsername()">Close</button>
+				</form>
+			</div>
+
+			<div class="popup" id="email-popup">
+				<form action="placeholder" class="form-container">
+					<label for="email"><b>Email</b></label><br>
+					<input type="text" placeholder="New Email" name="email" required>
+
+					<button type="submit" class="button">Confirm</button>
+					<button type="button" class="button" onclick="closeFormEmail()">Close</button>
+				</form>
+			</div>
+
+			<div class="popup" id="fname-popup">
+				<form action="placeholder" class="form-container">
+					<label for="fname"><b>First Name</b></label><br>
+					<input type="text" placeholder="New First Name" name="fname" required>
+
+					<button type="submit" class="button">Confirm</button>
+					<button type="button" class="button" onclick="closeFormFname()">Close</button>
+				</form>
+			</div>
+
+			<div class="popup" id="lname-popup">
+				<form action="placeholder" class="form-container">
+					<label for="lname"><b>First Name</b></label><br>
+					<input type="text" placeholder="New Last Name" name="lname" required>
+
+					<button type="submit" class="button">Confirm</button>
+					<button type="button" class="button" onclick="closeFormLname()">Close</button>
+				</form>
+			</div>
+
 		</main>
 	</body>
 </html>
