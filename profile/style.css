@@ -21,9 +21,11 @@ main {
     border-radius: 15px;
     border: 2px solid black;
     top: 20%;
+    bottom: 20%;
     left: 5%;
     width: 90%;
     height: 60%;
+    overflow: scroll;
 }
 .pages ul {
 	display: flex;
@@ -53,44 +55,23 @@ main {
     left: 2%;
 }
 
-#buttons {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-}
-
 .button {
     width: 100%;
     text-align: center;
 }
-
-.popup {
-    display: none;
+  input {
     background-color: white;
-    border: 3px solid black;
-    z-index: 9;
-    top:10%;
-    bottom:10%;
-    right:20%;
-    left: 20%;
-    position: fixed;
-    border-radius: 10px;
-    
-  }
-  
-  .form-container {
-    padding: 10px;
   }
 
-.form-container input[type=text] {
-    width: 90%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+  input:read-only {
+    background-color: transparent;
     border: none;
-    background: #f1f1f1;
   }
 
-  .form-container input[type=text]:focus {
-    background-color: #ddd;
-    outline: none;
+  table {
+    text-align: justify;
+  }
+
+  td{
+    padding: 20px; 
   }
