@@ -1,0 +1,66 @@
+.background-image {
+	background-size: cover;
+	height: 500px;
+	padding-top: 80px;
+	text-align: left;
+}
+body {
+	background-color: hsl(220, 30%, 10%);
+	margin: 0;
+}
+.box {
+	background: url(images/codecomplogo.jpg);
+	padding: 100px;
+	margin: 100px;
+}
+h1 {
+	font-size: 4rem;
+	color: hsl(220, 80%, 50%);
+	padding: 1rem;
+}
+h3 {
+	color: hsl(220, 85%, 62%);
+}
+h2 {
+	color: hsl(220, 80%, 90%);
+	line-height: 2;
+	font-size: 20px;
+	position: static;
+	font-family: "Georgia";
+}
+p {
+	color: hsl(220, 80%, 90%);
+}
+.container {
+	display: flex;
+}
+.card {
+	box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+p {
+	padding: 1rem;
+}
+
+h4 {
+	color: hsl(0, 0%, 100%);
+	padding: 2rem;
+	margin: 0;
+	text-align: center;
+}
+@media screen and (max-width: 650px) {
+	.column {
+		width: 100%;
+		display: block;
+	}
+}
+
+footer {
+	background-color: hsl(220, 80%, 70%);
+	color: hsl(192, 20%, 70%);
+	font-size: 0.8em;
+}
+footer.container {
+	display: flex;
+	justify-content: space-between;
+}
