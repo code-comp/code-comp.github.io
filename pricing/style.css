@@ -5,15 +5,14 @@ header {
 	align-items: center;
 	background-color: hsl(220, 50%, 30%);
 	position: fixed;
-    inset: 0 0 auto 0;
-    z-index: 1;
-    height: 50px;
+	inset: 0 0 auto 0;
+	z-index: 1;
+	height: 50px;
 }
 
 body {
-    background-color: hsl(220, 80%, 10%);
+	background-color: hsl(220, 80%, 10%);
 }
-
 
 .pages ul {
 	display: flex;
@@ -38,34 +37,55 @@ body {
 }
 
 #header {
-    background-color: hsl(220, 80%, 90%);
-    position: fixed;
-    left:0%;
-    top: 50px;
-    width:100%;
-    text-align: center;
-    height: 25%;
+	background-color: hsl(220, 80%, 90%);
+	position: absolute;
+	overflow: auto;
+	left: 0%;
+	top: 50px;
+	width: 100%;
+	text-align: center;
+	height: 25%;
+	border-bottom-style: solid;
+	border-bottom-color: hsl(220, 50%, 30%);
+	border-bottom-width: 10px;
 }
 
 #header-text {
-    margin:auto;
+	margin: auto;
+	font-size: 28px;
 }
 
 .grid-container {
-    position:absolute;
-    top: 35%;
-    display: grid;
-    grid-template-columns: 26.6% 26.6% 26.6%;
-    left: 5%;
-    width: 90%;
-    height: 60%;
-    column-gap: 10%;
-    background-color: hsl(220, 80%, 10%);
+	position: absolute;
+	top: calc(35% + 50px);
+	display: grid;
+	grid-template-columns: 26.6% 26.6% 26.6%;
+	left: 5%;
+	width: 90%;
+	height: calc(95% - (35% + 50px));
+	column-gap: 10%;
+	background-color: hsl(220, 80%, 10%);
 }
 
 .grid-item {
-    background-color: hsl(220, 80%, 90%);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-  }
+	background-color: hsl(220, 80%, 90%);
+	text-align: center;
+	font-size: 30px;
+	border-style: solid;
+	border-color: hsl(220, 50%, 30%);
+	border-radius: 10px;
+	border-width: 10px;
+	overflow: auto;
+}
+
+button {
+	width: 90%;
+	border-radius: 10px;
+	background-color: hsl(220, 50%, 30%);
+	color: white;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: hsl(220, 80%, 10%);
+}
