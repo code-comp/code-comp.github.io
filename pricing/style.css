@@ -51,7 +51,7 @@ body {
 	top: 50px;
 	width: 100%;
 	text-align: center;
-	height: 25%;
+	height: 28%;
 	border-top-style: solid;
 	border-top-color: var(--color-light);
 	border-top-width: 2px;
@@ -60,7 +60,7 @@ body {
 #header-text {
 	margin: auto;
 	height: 25%;
-	font-size: 180%;
+	font-size: 4vmin;
 }
 
 .grid-container {
@@ -78,23 +78,22 @@ body {
 .grid-item {
 	background-color: var(--color-navbar);
 	text-align: center;
-	font-size: 30px;
+	font-size: 2vw;
 	color: var(--color-light);
 	border-style: solid;
 	border-color: var(--color-navbar);
 	border-radius: 10px;
-	border-width: 10px;
 	overflow: auto;
 }
 
 .grid-item ul {
-	font-size: 25px;
+	font-size: 2vw;
 }
 
 button {
 	width: 90%;
 	border-radius: 10px;
-	height: 35px;
+	height: 12%;
 	margin-top: 8%;
 	background-color: var(--color-primary);
 	color: var(--color-light);
