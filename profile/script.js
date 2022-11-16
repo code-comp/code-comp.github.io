@@ -36,6 +36,7 @@ async function loadData() {
 			throw new Error(response.message);
 		} else {
 			awn.info(response.message);
+			console.info(response);
 		}
 
 		const { user } = response;
@@ -46,6 +47,7 @@ async function loadData() {
 		email.value = user.email || "";
 	} catch (error) {
 		awn.alert(error.message);
+		console.error(error);
 		setTimeout(() => (location.pathname = "/login"), 2000);
 	}
 }
@@ -93,9 +95,11 @@ document.querySelector("form").addEventListener("submit", async event => {
 			throw new Error(response.message);
 		} else {
 			awn.info(response.message);
+			console.info(response);
 		}
 	} catch (error) {
 		awn.alert(error.message);
+		console.error(error);
 	} finally {
 		// Toggle editing
 		toggleEdit();
