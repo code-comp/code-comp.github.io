@@ -132,6 +132,10 @@ input:disabled {
 	color: var(--color-light);
 }
 
+input:invalid {
+	outline: 2px solid var(--color-error);
+}
+
 .avatar {
 	display: flex;
 	align-items: center;
@@ -181,5 +185,15 @@ nav {
 
 	fieldset {
 		grid-template-columns: 1fr;
+	}
+}
+
+@keyframes shake {
+	50% {
+		transform: translateX(0.1ch);
+	}
+
+	100% {
+		transform: translateX(-0.1ch);
 	}
 }

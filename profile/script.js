@@ -115,9 +115,23 @@ document.addEventListener("change", ({ target }) => {
 			image.src = event.target.result;
 		});
 		reader.readAsDataURL(file);
-	} else if (target.matches("#password, #confirmPassword")) {
+	}
+	if (target.matches("#password, #confirmPassword")) {
 		// Reset the password validity
 		confirmPassword.setCustomValidity("");
+	}
+	if (target.matches(":invalid")) {
+		// Show the error message
+		awn.alert(target.validationMessage);
+	}
+});
+
+document.addEventListener("input", ({ target }) => {
+	if (target.matches(":invalid")) {
+		target.style.animation = "shake 250ms ease-in-out alternate";
+		target.addEventListener("animationend", () => {
+			target.style.animation = "";
+		});
 	}
 });
 
