@@ -11,9 +11,15 @@
 	--color-secondary: hsl(220, 80%, 30%);
 	--color-tertiary: hsl(220, 80%, 70%);
 	--color-background: hsl(220, 30%, 10%);
+	--color-header: hsl(220, 50%, 30%);
+	--color-hover: hsl(220, 50%, 20%);
 
 	scroll-behavior: smooth;
 	scroll-snap-type: y proximity;
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-tertiary);
 }
 
 body {
@@ -32,7 +38,7 @@ header {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	background-color: hsl(220, 50%, 30%);
+	background-color: var(--color-header);
 	position: absolute;
     inset: 0 0 auto 0;
     z-index: 1;
@@ -57,7 +63,7 @@ header {
 
 .pages a:hover,
 .pages a:focus {
-	background-color: hsl(220, 50%, 20%);
+	background-color: var(--color-hover);
 }
 
 section {

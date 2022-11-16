@@ -6,24 +6,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Profile</title>
 		<link rel="stylesheet" href="style.css" />
-		<link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css" />
-		<script defer src="script.js"></script>
+		<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css" />
+		<script src="//kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+		<script defer src="//unpkg.com/awesome-notifications/dist/modern.var.js"></script>
+		<link rel="stylesheet" href="//unpkg.com/awesome-notifications/dist/style.css" />
+		<script type="module" defer src="script.js"></script>
 	</head>
 	<body>
 		<header>
 			<nav class="pages">
 				<ul>
-					<li><a href="../index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About</a></li>
 				</ul>
 			</nav>
 			<nav class="pages">
 				<ul>
-					<li><a href="../login/index.html">Log In</a></li>
-					<li><a href="../login/index.html">Sign Up</a></li>
+					<li><a href="/login">Log In</a></li>
+					<li><a href="/login">Sign Up</a></li>
 					<li>
-						<a href="profile.html">
-							<img src="../images/profileIcon.png" alt="Profile" width="18" height="=18" />
+						<a href="/profile">
+							<i class="fas fa-user"></i>
 							Profile
 						</a>
 					</li>
@@ -31,36 +34,57 @@
 			</nav>
 		</header>
 		<main>
-			<div id="container">
-				<div id="output">
-					<table>
-						<tr>
-							<td>Username:</td>
-							<td><input type="text" id="userName" readonly /></td>
-						</tr>
-						<tr>
-							<td>First Name:</td>
-							<td><input type="text" id="firstName" readonly /></td>
-						</tr>
-						<tr>
-							<td>Last Name:</td>
-							<td><input type="text" id="lastName" readonly /></td>
-						</tr>
-						<tr>
-							<td>Email Address:</td>
-							<td><input type="text" id="email" readonly /></td>
-						</tr>
-						<tr>
-							<td>
-								<button class="button" onclick="editMode(true)">Edit</button>
-							</td>
-							<td>
-								<button class="button" onclick="saveUserProfile()">Save</button>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
+			<form>
+				<fieldset disabled>
+					<label for="avatar">Avatar</label>
+					<div class="avatar">
+						<img src="//site-assets.fontawesome.com/releases/v6.2.0/svgs/solid/user.svg" alt="Profile" width="100" height="100" />
+						<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+					</div>
+					<label for="username">Username:</label>
+					<input
+						type="text"
+						id="username"
+						name="username"
+						autocomplete="username"
+						minlength="3"
+						maxlength="20"
+						pattern="^[a-zA-Z0-9_.-]+$"
+					/>
+					<label for="firstName">First Name:</label>
+					<input type="text" id="firstName" name="firstName" autocomplete="given-name" />
+					<label for="lastName">Last Name:</label>
+					<input type="text" id="lastName" name="lastName" autocomplete="family-name" />
+					<label for="email">Email Address:</label>
+					<input type="email" id="email" name="email" autocomplete="email" />
+					<label for="password">Password:</label>
+					<input
+						type="password"
+						id="password"
+						name="password"
+						placeholder="••••••••"
+						autocomplete="new-password"
+						minlength="8"
+						maxlength="32"
+						pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,32}$"
+					/>
+					<label for="confirmPassword">Confirm Password:</label>
+					<input
+						type="password"
+						id="confirmPassword"
+						name="confirmPassword"
+						placeholder="••••••••"
+						autocomplete="new-password"
+						minlength="8"
+						maxlength="32"
+						pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,32}$"
+					/>
+				</fieldset>
+				<nav>
+					<button id="edit" type="button">Edit</button>
+					<button id="save" type="submit">Save</button>
+				</nav>
+			</form>
 		</main>
 	</body>
 </html>
