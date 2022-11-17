@@ -47,6 +47,8 @@ async function loadData() {
 		firstName.value = user.name.first || "";
 		lastName.value = user.name.last || "";
 		email.value = user.email || "";
+		password.value = "";
+		confirmPassword.value = "";
 	} catch (error) {
 		awn.alert(error.message);
 		console.error(error);
