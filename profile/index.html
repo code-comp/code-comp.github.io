@@ -51,11 +51,12 @@
 						minlength="3"
 						maxlength="20"
 						pattern="^[a-zA-Z0-9_.-]+$"
+						required
 					/>
 					<label for="firstName">First Name:</label>
-					<input type="text" id="firstName" name="firstName" autocomplete="given-name" />
+					<input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
 					<label for="lastName">Last Name:</label>
-					<input type="text" id="lastName" name="lastName" autocomplete="family-name" />
+					<input type="text" id="lastName" name="lastName" autocomplete="family-name" required />
 					<label for="email">Email Address:</label>
 					<input type="email" id="email" name="email" autocomplete="email" />
 					<label for="password">Password:</label>
