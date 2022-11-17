@@ -177,7 +177,7 @@ input:invalid {
 	height: 100%;
 }
 
-#passwordValidation	{
+#passwordValidation {
 	color: var(--color-error);
 	font-style: italic;
 	text-align: center;
