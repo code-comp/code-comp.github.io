@@ -116,9 +116,26 @@ document.addEventListener("change", ({ target }) => {
 		});
 		reader.readAsDataURL(file);
 	}
+	if (target.matches("#username")) {
+		// Reset the validity
+		username.setCustomValidity("");
+		// Provide a more specific error message
+		if (target.validity.patternMismatch) {
+			target.setCustomValidity(
+				"Must be between 3 and 20 characters and contain only letters, numbers, underscores, periods, and dashes.",
+			);
+		}
+	}
 	if (target.matches("#password, #confirmPassword")) {
 		// Reset the password validity
+		password.setCustomValidity("");
 		confirmPassword.setCustomValidity("");
+		// Provide a more specific error message
+		if (target.validity.patternMismatch) {
+			target.setCustomValidity(
+				"Must be between 8 and 32 characters and contain at least one uppercase and lowercase letter, number, and special character.",
+			);
+		}
 	}
 	if (target.matches(":invalid")) {
 		// Show the error message
