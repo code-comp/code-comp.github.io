@@ -6,6 +6,7 @@ const awn = new AWN({
 });
 
 const fieldset = document.querySelector("fieldset");
+const filePicker = document.querySelector(".avatar input");
 const image = document.querySelector(".avatar img");
 const username = document.querySelector("#username");
 const firstName = document.querySelector("#firstName");
@@ -40,6 +41,7 @@ async function loadData() {
 		}
 
 		const { user } = response;
+		filePicker.value = "";
 		image.src = user.avatar;
 		username.value = user.username || "";
 		firstName.value = user.name.first || "";
