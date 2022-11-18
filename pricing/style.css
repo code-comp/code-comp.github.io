@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 :root {
 	--color-light: hsl(220, 80%, 90%);
 	--color-dark: hsl(220, 80%, 10%);
@@ -7,6 +13,14 @@
 	--color-background: hsl(220, 30%, 10%);
 	--color-header: hsl(220, 50%, 30%);
 	--color-hover: hsl(220, 50%, 20%);
+	--color-error: hsl(0, 80%, 70%);
+}
+
+body {
+	margin: 0;
+	font-family: "Lato", sans-serif;
+	color: var(--color-light);
+	background-color: var(--color-background);
 }
 
 header {
@@ -15,11 +29,6 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	background-color: var(--color-header);
-}
-
-body {
-	background-color: var(--color-dark);
-	margin: 0;
 }
 
 .pages ul {
@@ -35,7 +44,7 @@ body {
 	padding: 1em;
 	text-align: center;
 	text-decoration: none;
-	color: white;
+	color: var(--color-light);
 	transition: 250ms ease-in-out;
 }
 
