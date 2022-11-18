@@ -5,7 +5,8 @@
 	--color-secondary: hsl(220, 80%, 30%);
 	--color-tertiary: hsl(220, 80%, 70%);
 	--color-background: hsl(220, 30%, 10%);
-	--color-navbar: hsl(220, 50%, 30%);
+	--color-header: hsl(220, 50%, 30%);
+	--color-hover: hsl(220, 50%, 20%);
 }
 
 header {
@@ -13,7 +14,7 @@ header {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--color-navbar);
+	background-color: var(--color-header);
 }
 
 body {
@@ -40,11 +41,11 @@ body {
 
 .pages a:hover,
 .pages a:focus {
-	background-color: hsl(220, 50%, 20%);
+	background-color: var(--color-hover);
 }
 
 #header {
-	background-color: var(--color-navbar);
+	background-color: var(--color-header);
 	color: var(--color-light);
 	position: absolute;
 	left: 0%;
@@ -76,14 +77,20 @@ body {
 }
 
 .grid-item {
-	background-color: var(--color-navbar);
+	background-color: var(--color-header);
 	text-align: center;
 	font-size: 2vw;
 	color: var(--color-light);
 	border-style: solid;
-	border-color: var(--color-navbar);
+	border-color: var(--color-header);
 	border-radius: 10px;
 	overflow: auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
 }
 
 .grid-item ul {
@@ -102,7 +109,7 @@ button {
 }
 
 button:hover {
-	background-color: var(--color-dark);
+	background-color: var(--color-hover);
 }
 
 ul {
