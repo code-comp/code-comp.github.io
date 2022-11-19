@@ -57,13 +57,20 @@ header {
 	padding: 1em;
 	text-align: center;
 	text-decoration: none;
-	color: white;
+	color: var(--color-light);
 	transition: 250ms ease-in-out;
 }
 
 .pages a:hover,
 .pages a:focus {
 	background-color: var(--color-hover);
+}
+
+#profile {
+	object-fit: cover;
+	height: 1rem;
+	vertical-align: middle;
+	border-radius: 50%;
 }
 
 section {
