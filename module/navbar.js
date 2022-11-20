@@ -14,11 +14,11 @@ if (id) {
 					Authorization: `Bearer ${token}`,
 				},
 			})
-        ).json();
+		).json();
 
-        if (!response.success) {
-            throw new Error(response.message);
-        }
+		if (!response.success) {
+			throw new Error(response.message);
+		}
 
 		const { user } = response;
 		image.src = user?.avatar ?? "";
