@@ -12,12 +12,10 @@
 	--color-tertiary: hsl(220, 80%, 70%);
 	--color-background: hsl(220, 30%, 10%);
 	--color-header: hsl(220, 50%, 30%);
-	--color-hover: hsl(220, 50%, 20%);
+	--color-header-hover: hsl(220, 50%, 20%);
 	--color-error: hsl(0, 80%, 70%);
-}
 
-:focus-visible {
-	outline: 2px solid var(--color-tertiary);
+	scroll-behavior: smooth;
 }
 
 html,
@@ -56,7 +54,7 @@ header {
 
 .pages a:hover,
 .pages a:focus {
-	background-color: var(--color-hover);
+	background-color: var(--color-header-hover);
 }
 
 main {
@@ -86,6 +84,10 @@ fieldset {
 	grid-template-columns: clamp(10rem, 30%, 20rem) 1fr;
 	gap: 1ch;
 	padding: 0;
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-tertiary);
 }
 
 button {

@@ -12,15 +12,11 @@
 	--color-tertiary: hsl(220, 80%, 70%);
 	--color-background: hsl(220, 30%, 10%);
 	--color-header: hsl(220, 50%, 30%);
-	--color-hover: hsl(220, 50%, 20%);
+	--color-header-hover: hsl(220, 50%, 20%);
 	--color-error: hsl(0, 80%, 70%);
 
 	scroll-behavior: smooth;
 	scroll-snap-type: y proximity;
-}
-
-:focus-visible {
-	outline: 2px solid var(--color-tertiary);
 }
 
 html,

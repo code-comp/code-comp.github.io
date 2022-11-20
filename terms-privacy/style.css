@@ -12,7 +12,7 @@
 	--color-tertiary: hsl(220, 80%, 70%);
 	--color-background: hsl(220, 30%, 10%);
 	--color-header: hsl(220, 50%, 30%);
-	--color-hover: hsl(220, 50%, 20%);
+	--color-header-hover: hsl(220, 50%, 20%);
 	--color-error: hsl(0, 80%, 70%);
 
 	scroll-behavior: smooth;
@@ -54,7 +54,7 @@ header {
 
 .pages a:hover,
 .pages a:focus {
-	background-color: var(--color-hover);
+	background-color: var(--color-header-hover);
 }
 
 main {
