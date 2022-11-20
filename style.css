@@ -1,3 +1,9 @@
+@property --banner-color {
+	syntax: "<color>";
+	initial-value: transparent;
+	inherits: false;
+}
+
 *,
 *::before,
 *::after {
@@ -16,7 +22,6 @@
 	--color-error: hsl(0, 80%, 70%);
 
 	scroll-behavior: smooth;
-	scroll-snap-type: y proximity;
 }
 
 html,
@@ -24,10 +29,7 @@ body {
 	height: 100%;
 	margin: 0;
 	font-family: "Lato", sans-serif;
-	padding-block: min(10vh, 10rem);
-	padding-inline: min(10vw, 10rem);
-	overflow-x: hidden;
-	color: white;
+	color: var(--color-light);
 	background-color: var(--color-background);
 }
 
@@ -37,9 +39,6 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	background-color: var(--color-header);
-	position: absolute;
-	inset: 0 0 auto 0;
-	z-index: 1;
 }
 
 .pages ul {
@@ -61,7 +60,7 @@ header {
 
 .pages a:hover,
 .pages a:focus {
-	background-color: var(--color-hover);
+	background-color: var(--color-header-hover);
 }
 
 #profile {
@@ -71,58 +70,80 @@ header {
 	border-radius: 50%;
 }
 
-section {
-	scroll-snap-align: start;
-}
-
 #hero {
-	position: absolute;
-	inset: 0;
+	position: relative;
+	height: 80vh;
 }
 
-#hero h1 {
+#hero h1,
+#hero h2 {
 	z-index: 1;
 	position: absolute;
-	inset: min(14vw, 5rem) 0 auto 0;
 	margin: 0;
-	font-size: min(14vw, 5rem);
 	text-align: center;
 	color: var(--color-light);
 }
 
+#hero h1 {
+	box-sizing: border-box;
+	inset: 10vmin 0 auto 0;
+	font-size: min(7vmin, 5rem);
+	width: fit-content;
+	margin: auto;
+	padding: 1rem;
+}
+
+#hero .caption {
+	box-sizing: border-box;
+	inset: auto 1rem 15vmin 1rem;
+	width: fit-content;
+	margin: auto;
+	padding: 1ch;
+	font-size: min(5vmin, 2rem);
+	background: linear-gradient(to right, transparent, var(--banner-color), transparent);
+	filter: drop-shadow(0 0 10px black);
+	animation: cubic-bezier(0.445, 0.05, 0.55, 0.95) 3s infinite pulse;
+}
+
+#hero #cta {
+	box-sizing: border-box;
+	z-index: 1;
+	position: absolute;
+	inset: auto 1rem 0 1rem;
+	width: fit-content;
+	margin: auto;
+	padding: 0.5em 1em;
+	border-radius: 0.5em;
+	font-size: min(6vmin, 2rem);
+	text-align: center;
+	text-decoration: none;
+	background-color: var(--color-primary);
+	color: var(--color-light);
+	cursor: pointer;
+	transition: 250ms ease-in-out;
+}
+
+#hero #cta:hover,
+#hero #cta:focus {
+	background-color: var(--color-secondary);
+}
+
 #hero canvas {
 	z-index: -1;
+	max-width: 100%;
 	-webkit-mask-image: linear-gradient(to bottom, var(--color-background) 75%, transparent);
 	mask-image: linear-gradient(to bottom, var(--color-background) 75%, transparent);
 	touch-action: none;
 }
 
-#hero #play {
-	z-index: 1;
-	position: absolute;
-	inset: auto 0 0 0;
-	padding-bottom: min(7vw, 2.5rem);
-	text-align: center;
-	font-size: min(7vw, 2.5rem);
-	text-decoration: none;
-	background: none;
-	border: none;
-	color: var(--color-tertiary);
-	cursor: pointer;
-	transition: 0.2s ease-in-out;
-}
-
-#hero #play:hover {
-	color: var(--color-primary);
-	transform: scale(1.1);
-}
-
-#hero + section {
-	margin-top: calc(100vh - min(14vw, 5rem) + min(7vw, 2.5rem));
-}
-
 @media screen and (max-width: 455px) {
 	header {
 		justify-content: center;
+	}
+}
+
+@keyframes pulse {
+	50% {
+		--banner-color: var(--color-primary);
 	}
 }

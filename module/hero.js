@@ -8,7 +8,7 @@ const container = document.querySelector("#hero");
 // Setup the renderer
 const renderer = new THREE.WebGLRenderer();
 renderer.setClearColor(0x081c45);
-renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setSize(innerWidth, innerHeight);
 container.appendChild(renderer.domElement);
 
 // Create a camera
@@ -50,9 +50,6 @@ addEventListener("scroll", () => {
 	// Zoom camera in and out based on mouse wheel
 	camera.position.setZ(10 - scrollY / 100);
 	renderer.render(scene, camera);
-
-	// Move button up to center
-	document.querySelector("#play").style.transform = `translateY(${-scrollY}px)`;
 });
 
 /**
@@ -106,3 +103,30 @@ function moveTablet(tablet, x, y) {
 	tablet.position.applyQuaternion(new THREE.Quaternion().setFromEuler(new THREE.Euler(y / 100, x / 100, 0, "XYZ")));
 	renderer.render(scene, camera);
 }
+
+const action = ["Compete", "Play", "Learn", "Explore"];
+const noun = ["with strangers", "on your own", "with your friends", "with your family", "with your colleagues"];
+const verb = ["in a tournament", "in a game", "in a lesson", "in a challenge"];
+
+const actionElement = document.querySelector("#action");
+const nounElement = document.querySelector("#noun");
+const verbElement = document.querySelector("#verb");
+
+let actionIndex = 0;
+let nounIndex = 0;
+let verbIndex = 0;
+
+/**
+ * Update the text on the hero
+ */
+function updateText() {
+	actionIndex = (actionIndex + 1) % action.length;
+	nounIndex = (nounIndex + 1) % noun.length;
+	verbIndex = (verbIndex + 1) % verb.length;
+
+	actionElement.textContent = action[actionIndex];
+	nounElement.textContent = noun[nounIndex];
+	verbElement.textContent = verb[verbIndex];
+}
+updateText();
+document.querySelector(".caption").addEventListener("animationiteration", updateText);
