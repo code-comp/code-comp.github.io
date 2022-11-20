@@ -38,7 +38,6 @@ async function loadData() {
 		if (!response.success) {
 			throw new Error(response.message);
 		} else {
-			awn.info(response.message);
 			console.info(response);
 		}
 
