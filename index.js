@@ -1,5 +1,11 @@
 import "./module/navbar.js";
 
 if (location.pathname === "/") {
-	import("./module/hero.js");
+	if (document.readyState === "loading") {
+		addEventListener("DOMContentLoaded", () => {
+			import("./module/hero.js");
+		});
+	} else {
+		import("./module/hero.js");
+	}
 }
