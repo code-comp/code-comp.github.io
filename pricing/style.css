@@ -16,7 +16,8 @@
 	--color-error: hsl(0, 80%, 70%);
 }
 
-html, body {
+html,
+body {
 	height: 100%;
 	margin: 0;
 	font-family: "Lato", sans-serif;

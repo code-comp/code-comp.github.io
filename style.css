@@ -13,6 +13,7 @@
 	--color-background: hsl(220, 30%, 10%);
 	--color-header: hsl(220, 50%, 30%);
 	--color-hover: hsl(220, 50%, 20%);
+	--color-error: hsl(0, 80%, 70%);
 
 	scroll-behavior: smooth;
 	scroll-snap-type: y proximity;
@@ -22,7 +23,9 @@
 	outline: 2px solid var(--color-tertiary);
 }
 
+html,
 body {
+	height: 100%;
 	margin: 0;
 	font-family: "Lato", sans-serif;
 	padding-block: min(10vh, 10rem);
@@ -32,7 +35,6 @@ body {
 	background-color: var(--color-background);
 }
 
-
 header {
 	display: flex;
 	flex-wrap: wrap;
@@ -40,8 +42,8 @@ header {
 	align-items: center;
 	background-color: var(--color-header);
 	position: absolute;
-    inset: 0 0 auto 0;
-    z-index: 1;
+	inset: 0 0 auto 0;
+	z-index: 1;
 }
 
 .pages ul {

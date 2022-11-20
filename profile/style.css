@@ -20,7 +20,9 @@
 	outline: 2px solid var(--color-tertiary);
 }
 
+html,
 body {
+	height: 100%;
 	margin: 0;
 	font-family: "Lato", sans-serif;
 	color: var(--color-light);
@@ -167,7 +169,7 @@ input:invalid {
 }
 
 .avatar img[src=""] {
-    display: none;
+	display: none;
 }
 
 .avatar input {
