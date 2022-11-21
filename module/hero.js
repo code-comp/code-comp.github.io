@@ -123,7 +123,11 @@ for (let i = 0; i < 50; i++) {
 
 	const boxGeometry = new THREE.BoxGeometry();
 	boxGeometry.scale(1, 1, 0.005);
-	const boxMaterial = new THREE.MeshPhysicalMaterial({ color });
+	const boxMaterial = new THREE.MeshPhysicalMaterial({
+		color,
+		opacity: 0.9,
+		transparent: true,
+	});
 	const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
 
 	// Draw text
