@@ -269,8 +269,8 @@ footer {
 @media only screen and (max-width: 768px) {
 	.container {
 		flex-direction: column;
-		width: 100%;
-		margin: 0 20px 20em;
+		width: calc(100% - 2rem);
+		margin: 10rem 1rem;
 	}
 	.left {
 		width: 100%;
