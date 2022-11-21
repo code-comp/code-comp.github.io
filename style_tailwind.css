@@ -1113,11 +1113,6 @@ footer a {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
-.invalid\:ring-red-300:invalid {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(252 165 165 / var(--tw-ring-opacity));
-}
-
 .invalid\:ring-error:invalid {
   --tw-ring-color: var(--color-error);
 }
