@@ -4,8 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../style_tailwind.css" />
 		<title>Register</title>
+
+		<link rel="preconnect" href="kit.fontawesome.com" />
+		<script src="//kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+		<link rel="preconnect" href="//fonts.googleapis.com" />
+		<link rel="preconnect" href="//fonts.gstatic.com" crossorigin />
+		<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css" />
+		<link href="//fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+		<script defer src="//unpkg.com/awesome-notifications/dist/modern.var.js"></script>
+		<link rel="stylesheet" href="//unpkg.com/awesome-notifications/dist/style.css" />
+
+		<script src="script.js" type="module" defer></script>
+		<link rel="stylesheet" href="../style_tailwind.css" />
 	</head>
 	<body class="bg-gradient-to-tr from-primary to to-secondary grid items-center p-8">
 		<section>
@@ -16,20 +27,24 @@
 						<label for="firstname" class="font-bold text-gray-500">First Name</label>
 						<input
 							type="text"
-							name="firstName"
 							id="firstName"
+							name="firstName"
+							autocomplete="given-name"
+							required
 							placeholder="First Name"
-							class="mb-4 rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 w-full"
+							class="mb-4 rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 w-full text-black invalid:ring-1 invalid:ring-error"
 						/>
 					</div>
 					<div>
 						<label for="lastName" class="font-bold text-gray-500">Last Name</label>
 						<input
 							type="text"
-							name="lastName"
 							id="lastName"
+							name="lastName"
+							autocomplete="family-name"
+							required
 							placeholder="Last Name"
-							class="mb-4 rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 w-full"
+							class="mb-4 rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 w-full text-black invalid:ring-1 invalid:ring-error"
 						/>
 					</div>
 				</div>
@@ -37,40 +52,54 @@
 					<label for="username" class="font-bold text-gray-500">Username</label>
 					<input
 						type="text"
-						name="username"
 						id="username"
+						name="username"
+						autocomplete="username"
+						minlength="3"
+						maxlength="20"
+						pattern="^[a-zA-Z0-9_.-]+$"
+						required
 						placeholder="Username"
-						class="mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300"
+						class="mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 text-black invalid:ring-1 invalid:ring-error"
 					/>
 				</div>
 				<div>
 					<label for="email" class="font-bold text-gray-500">Email</label>
 					<input
 						type="email"
-						name="email"
 						id="email"
-						placeholder="example@email.com"
-						class="mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300"
+						name="email"
+						autocomplete="email"
+						placeholder="Email"
+						class="mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 text-black invalid:ring-1 invalid:ring-error"
 					/>
 				</div>
 				<div>
 					<label for="password" class="font-bold text-gray-500">Password</label>
 					<input
 						type="password"
-						name="password"
 						id="password"
+						name="password"
+						autocomplete="new-password"
+						minlength="8"
+						maxlength="32"
+						pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,32}$"
 						placeholder="Password"
-						class="mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300"
+						class="mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 text-black invalid:ring-1 invalid:ring-error"
 					/>
 				</div>
 				<div>
 					<label for="confirmPassword" class="font-bold text-gray-500">Confirm Password</label>
 					<input
 						type="password"
-						name="confirmPassword"
 						id="confirmPassword"
+						name="confirmPassword"
+						autocomplete="new-password"
+						minlength="8"
+						maxlength="32"
+						pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,32}$"
 						placeholder="Confirm Password"
-						class="mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300"
+						class="mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 text-black invalid:ring-1 invalid:ring-error"
 					/>
 				</div>
 				<button
