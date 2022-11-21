@@ -2,33 +2,59 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Login Page</title>
-		<link rel="stylesheet" href="style.css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+
+		<link rel="preconnect" href="kit.fontawesome.com" />
+		<script src="//kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+		<link rel="preconnect" href="//fonts.googleapis.com" />
+		<link rel="preconnect" href="//fonts.gstatic.com" crossorigin />
+		<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css" />
+		<link href="//fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+		<script defer src="//unpkg.com/awesome-notifications/dist/modern.var.js"></script>
+		<link rel="stylesheet" href="//unpkg.com/awesome-notifications/dist/style.css" />
+
+		<script src="script.js" type="module" defer></script>
+		<link rel="stylesheet" href="../style_tailwind.css" />
 	</head>
-	<body>
-		<div id="login-form-wrap">
-			<h2>Login</h2>
-			<form id="login-form">
-				<p>
-					<input type="text" id="username" name="username" placeholder="Username" required /><i
-						class="validation"
-						><span></span><span></span
-					></i>
-				</p>
-				<p>
-					<input type="email" id="email" name="email" placeholder="Email Address" required /><i
-						class="validation"
-						><span></span><span></span
-					></i>
-				</p>
-				<p>
-					<input type="submit" id="login" value="Login" />
-				</p>
+	<body class="bg-gradient-to-tr from-primary to to-secondary grid items-center p-8">
+		<section>
+			<h1 class="pt-half pb-6 text-center text-3xl font-bold text-white drop-shadow-lg">Log In</h1>
+			<form class="mx-auto max-w-lg rounded-lg bg-white p-8 shadow-md">
+				<div>
+					<label for="username" class="font-bold text-gray-500">Username</label>
+					<input
+						type="text"
+						id="username"
+						name="username"
+						autocomplete="username"
+						required
+						placeholder="Username"
+						class="mb-4 rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 w-full text-black"
+					/>
+				</div>
+				<div>
+					<label for="password" class="font-bold text-gray-500">Password</label>
+					<input
+						type="password"
+						id="password"
+						name="password"
+						autocomplete="current-password"
+						placeholder="Password"
+						class="mb-4 rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 w-full text-black"
+					/>
+				</div>
+				<button
+					type="submit"
+					class="rounded-md bg-blue-700 p-3 text-white drop-shadow-lg transition ease-in-out hover:bg-blue-500 w-full"
+				>
+					Submit
+				</button>
 			</form>
-			<div id="create-account-wrap">
-				<p>Not a member? <a href="#">Create Account</a></p>
-				<p></p>
-			</div>
-		</div>
+			<p class="text-center text-white pt-4 mx-4">
+				Don't have an account? <a href="/register" class="text-blue-400 hover:text-blue-200">Sign up</a>
+			</p>
+		</section>
 	</body>
 </html>

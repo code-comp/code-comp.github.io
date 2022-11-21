@@ -43,7 +43,7 @@ async function loadData() {
 
 		const { user } = response;
 		filePicker.value = "";
-		image.src = user.avatar;
+		image.src = user.avatar || "";
 		username.value = user.username || "";
 		firstName.value = user.name.first || "";
 		lastName.value = user.name.last || "";
@@ -98,10 +98,9 @@ document.querySelector("form").addEventListener("submit", async event => {
 		).json();
 		if (!response.success) {
 			throw new Error(response.message);
-		} else {
-			awn.info(response.message);
-			console.info(response);
 		}
+		awn.info(response.message);
+		console.info(response);
 	} catch (error) {
 		awn.alert(error.message);
 		console.error(error);
