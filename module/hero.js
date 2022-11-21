@@ -3,6 +3,34 @@ import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import { Lensflare, LensflareElement } from "three/examples/jsm/objects/Lensflare.js";
 
+// Caption text
+const action = ["Compete", "Play", "Learn", "Explore"];
+const noun = ["with strangers", "on your own", "with your friends", "with your family", "with your colleagues"];
+const verb = ["in a tournament", "in a game", "in a lesson", "in a challenge"];
+
+const actionElement = document.querySelector("#action");
+const nounElement = document.querySelector("#noun");
+const verbElement = document.querySelector("#verb");
+
+let actionIndex = 0;
+let nounIndex = 0;
+let verbIndex = 0;
+
+/**
+ * Update the text on the hero
+ */
+function updateText() {
+	actionIndex = (actionIndex + 1) % action.length;
+	nounIndex = (nounIndex + 1) % noun.length;
+	verbIndex = (verbIndex + 1) % verb.length;
+
+	actionElement.textContent = action[actionIndex];
+	nounElement.textContent = noun[nounIndex];
+	verbElement.textContent = verb[verbIndex];
+}
+updateText();
+document.querySelector(".caption").addEventListener("animationiteration", updateText);
+
 // Get the hero canvas element
 const container = document.querySelector("#hero");
 
@@ -152,30 +180,3 @@ function animate() {
 	requestAnimationFrame(animate);
 }
 animate();
-
-const action = ["Compete", "Play", "Learn", "Explore"];
-const noun = ["with strangers", "on your own", "with your friends", "with your family", "with your colleagues"];
-const verb = ["in a tournament", "in a game", "in a lesson", "in a challenge"];
-
-const actionElement = document.querySelector("#action");
-const nounElement = document.querySelector("#noun");
-const verbElement = document.querySelector("#verb");
-
-let actionIndex = 0;
-let nounIndex = 0;
-let verbIndex = 0;
-
-/**
- * Update the text on the hero
- */
-function updateText() {
-	actionIndex = (actionIndex + 1) % action.length;
-	nounIndex = (nounIndex + 1) % noun.length;
-	verbIndex = (verbIndex + 1) % verb.length;
-
-	actionElement.textContent = action[actionIndex];
-	nounElement.textContent = noun[nounIndex];
-	verbElement.textContent = verb[verbIndex];
-}
-updateText();
-document.querySelector(".caption").addEventListener("animationiteration", updateText);
