@@ -31,18 +31,22 @@ function updateText() {
 updateText();
 document.querySelector(".caption").addEventListener("animationiteration", updateText);
 
+const colorLight = new THREE.Color(`hsl(220, 80%, 95%)`);
+const colorBackground = new THREE.Color(`hsl(220, 80%, 15%)`);
+const colorDark = new THREE.Color(`hsl(220, 30%, 10%)`);
+
 // Get the hero canvas element
 const container = document.querySelector("#hero");
 
 // Setup the renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(devicePixelRatio);
-renderer.setClearColor(0x081c45);
+renderer.setClearColor(colorBackground);
 renderer.setSize(innerWidth, innerHeight);
 container.appendChild(renderer.domElement);
 
 // Create a camera
-const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.01, 1000);
+const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.01, 100);
 camera.zoom = innerWidth / 1000;
 camera.position.z = 3;
 camera.focalLength = 3;
@@ -50,14 +54,8 @@ camera.focalLength = 3;
 // Create a scene
 const scene = new THREE.Scene();
 
-// Add illumination
-const spotlight = new THREE.SpotLight(0xffffff);
-spotlight.castShadow = true;
-spotlight.position.set(100, 40, 50);
-scene.add(spotlight);
-
 // Add lens flares
-const dirLight = new THREE.DirectionalLight(0xffffff, 0.05);
+const dirLight = new THREE.DirectionalLight(colorLight, 0.05);
 dirLight.position.set(0, -1, 0).normalize();
 dirLight.color.setHSL(0.1, 0.7, 0.5);
 scene.add(dirLight);
@@ -66,12 +64,12 @@ const textureLoader = new THREE.TextureLoader();
 const textureFlare0 = textureLoader.load("/assets/lensflare0.png");
 const textureFlare3 = textureLoader.load("/assets/lensflare3.png");
 
-addLight(0.55, 0.9, 0.5, 5000, 0, -1000);
-addLight(0.08, 0.8, 0.5, 0, 0, -1000);
-addLight(0.995, 0.5, 0.9, 5000, 5000, -1000);
+addLight(0.55, 0.9, 0.5, 5, -5, 5); // Cyan is at right bottom front
+addLight(0.08, 0.8, 0.5, 0, -3, -10); // Orange is at center middle-bottom back
+addLight(0.995, 0.5, 0.9, -10, 10, 10); // White is at the far left top front
 
 function addLight(h, s, l, x, y, z) {
-	const light = new THREE.PointLight(0xffffff, 1.5, 2000);
+	const light = new THREE.PointLight(colorLight, 1.5, 2000);
 	light.color.setHSL(h, s, l);
 	light.position.set(x, y, z);
 	scene.add(light);
@@ -86,7 +84,7 @@ function addLight(h, s, l, x, y, z) {
 }
 
 // Add fog
-scene.fog = new THREE.FogExp2(0x081c45, 0.1);
+scene.fog = new THREE.FogExp2(colorBackground, 0.1);
 
 const font = await new Promise(resolve => {
 	new FontLoader().load("../assets/Lato_Regular.json", font => {
@@ -102,7 +100,7 @@ const headingGeometry = new TextGeometry("Code Comp", {
 });
 headingGeometry.center();
 const headingMaterial = new THREE.MeshPhysicalMaterial({
-	color: new THREE.Color(`hsl(220, 80%, 90%)`),
+	color: colorLight,
 });
 const headingMesh = new THREE.Mesh(headingGeometry, headingMaterial);
 headingMesh.position.setZ(1);
@@ -111,7 +109,7 @@ scene.add(headingMesh);
 
 // Add tablets
 const tablets = [];
-const textMaterial = new THREE.MeshPhysicalMaterial({ color: 0x000000 });
+const textMaterial = new THREE.MeshPhysicalMaterial({ color: colorDark });
 const textGeometry = new TextGeometry(">_", {
 	font: font,
 	size: 0.25,
