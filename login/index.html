@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style_tailwind.css">
-  <title>Login</title>
-</head>
-<body class="bg-gradient-to-tr from-primary to bg-blue-800 min-h-screen grid items-center pb-12">
-  <div class="px-8">
-    <h1 class="pt-half pb-6 text-center text-3xl font-bold text-white drop-shadow-lg">Log In</h1>
-    <div class="mx-auto max-w-lg rounded-lg bg-white p-10 shadow-md">
-      <form>
-        <div id="username">
-          <label for="username" class="font-bold text-gray-500">Username</label>
-          <br />
-          <input type="username" name="username" id="username" placeholder="Username" 
-          class="mt-2 mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300" />
-        </div>
-        <div id="password">
-          <label for="password" class="font-bold text-gray-500">Password</label>
-          <br />
-          <input type="password" name="password" id="password" placeholder="Password" 
-          class="mt-2 mb-4 w-full rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300" />
-          <button type="submit" class="mt-2 w-full rounded-md bg-blue-700 p-3 text-white drop-shadow-lg transition ease-in-out  hover:bg-blue-500">Submit</button>
-        </div>
-      </form>
-    </div>
-    <div>
-      <p class="text-center text-white pt-4 mx-4">Don't have an account? <a href="/register" class="text-blue-400 hover:text-blue-200">Sign up</a></p>
-  </div>
-</div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style_tailwind.css" />
+		<title>Login</title>
+	</head>
+	<body class="bg-gradient-to-tr from-primary to to-secondary grid items-center p-8">
+		<section>
+			<h1 class="pt-half pb-6 text-center text-3xl font-bold text-white drop-shadow-lg">Log In</h1>
+			<form class="mx-auto max-w-lg rounded-lg bg-white p-8 shadow-md">
+				<div>
+					<label for="username" class="font-bold text-gray-500">Username</label>
+					<input
+						type="username"
+						name="username"
+						id="username"
+						placeholder="Username"
+						class="mb-4 rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 w-full"
+					/>
+				</div>
+				<div>
+					<label for="password" class="font-bold text-gray-500">Password</label>
+					<input
+						type="password"
+						name="password"
+						id="password"
+						placeholder="Password"
+						class="mb-4 rounded-lg border px-4 py-2 ring-0 drop-shadow-sm transition ease-in-out hover:ring-1 hover:ring-blue-300 w-full"
+					/>
+				</div>
+				<button
+					type="submit"
+					class="rounded-md bg-blue-700 p-3 text-white drop-shadow-lg transition ease-in-out hover:bg-blue-500 w-full"
+				>
+					Submit
+				</button>
+			</form>
+			<p class="text-center text-white pt-4 mx-4">
+				Don't have an account? <a href="/register" class="text-blue-400 hover:text-blue-200">Sign up</a>
+			</p>
+		</section>
+	</body>
+</html>

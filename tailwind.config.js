@@ -1,10 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ["**/*.{html,js}"],
+	content: ["**/*.html"],
 	theme: {
 		extend: {
-			colors: { 
-				primary: "hsl(220, 80%, 10%)" 
+			colors: {
+				dark: "var(--color-dark)",
+				primary: "var(--color-primary)",
+				secondary: "var(--color-secondary)",
+				tertiary: "var(--color-tertiary)",
+				background: "var(--color-background)",
+				header: "var(--color-header)",
+				"header-hover": "var(--color-header-hover)",
+				error: "var(--color-error)",
 			},
 		},
 	},
