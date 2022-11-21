@@ -85,7 +85,6 @@ main {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 1rem;
-	background-color: var(--color-dark);
 	width: fit-content;
 	margin: auto;
 }
@@ -139,5 +138,6 @@ main {
 @media screen and (max-width: 900px) {
 	.grid {
 		grid-template-columns: 1fr;
+		padding-bottom: 3rem;
 	}
 }
