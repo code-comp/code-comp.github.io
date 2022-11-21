@@ -218,8 +218,12 @@ header .logo {
 footer {
 	background: rgba(8, 28, 69, 1);
 	height: auto;
-	padding-top: 40px;
-	color: #fff;
+	padding-top: 2.5rem;
+	color: var(--color-light);
+}
+
+footer a {
+	color: inherit;
 }
 
 .footer-content {
