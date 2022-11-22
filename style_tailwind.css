@@ -873,6 +873,7 @@ header .logo {
   text-decoration: none;
   color: var(--color-light);
   transition: 250ms ease-in-out;
+  height: 100%;
 }
 
 .pages a:hover,
@@ -1027,33 +1028,10 @@ header .logo {
 }
 
 footer {
-  background: rgba(8, 28, 69, 1);
-  height: auto;
-  padding-top: 2.5rem;
+  padding: 1rem;
+  background: var(--color-dark);
   color: var(--color-light);
-}
-
-footer a {
-  color: inherit;
-}
-
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
-}
-
-.footer-content h3 {
-  font-size: 1.8rem;
-  font-weight: 400;
-  text-transform: capitalize;
-}
-
-.footer-content p {
-  max-width: 32rem;
-  margin: 1rem auto;
 }
 
 .socials {
@@ -1061,15 +1039,12 @@ footer a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0 3rem;
   padding: 0;
   gap: 1rem;
 }
 
-.footer-bottom {
-  background: var(--color-dark);
-  padding: 1rem 0;
-  text-align: center;
+footer a {
+  color: inherit;
 }
 
 @media screen and (max-width: 455px) {

@@ -50,6 +50,7 @@ header {
 	text-decoration: none;
 	color: var(--color-light);
 	transition: 250ms ease-in-out;
+	height: 100%;
 }
 
 .pages a:hover,
