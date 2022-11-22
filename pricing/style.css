@@ -25,6 +25,9 @@ body {
 	font-family: "Lato", sans-serif;
 	color: var(--color-light);
 	background-color: var(--color-background);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 header {
@@ -138,6 +141,23 @@ main {
 
 .grid button:hover {
 	background-color: var(--color-secondary);
+}
+
+footer {
+	padding: 1ch;
+	font-size: 0.8em;
+	padding: 1rem;
+	background: var(--color-dark);
+	color: var(--color-light);
+	text-align: center;
+}
+
+footer p {
+	margin: 0;
+}
+
+footer a {
+	color: inherit;
 }
 
 @media screen and (max-width: 455px) {

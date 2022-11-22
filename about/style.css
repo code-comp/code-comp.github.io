@@ -124,19 +124,15 @@ main a {
 }
 
 footer {
-	padding: 1rem;
+	padding: 1ch;
+	font-size: 0.8em;
 	background: var(--color-dark);
 	color: var(--color-light);
 	text-align: center;
 }
 
-.socials {
-	list-style: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0;
-	gap: 1rem;
+footer p {
+	margin: 0;
 }
 
 footer a {
