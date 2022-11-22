@@ -84,19 +84,16 @@ a {
 }
 
 footer {
+	padding: 1ch;
+	font-size: 0.8em;
 	padding: 1rem;
 	background: var(--color-dark);
 	color: var(--color-light);
 	text-align: center;
 }
 
-.socials {
-	list-style: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0;
-	gap: 1rem;
+footer p {
+	margin: 0;
 }
 
 footer a {
@@ -109,7 +106,7 @@ footer a {
 	}
 }
 
-@media (max-width: 780px) or (max-width: 780px) {
+@media screen and (max-width: 780px) {
 	main {
 		position: static;
 		border-top: 1px solid var(--color-light);
