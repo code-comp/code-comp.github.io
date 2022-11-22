@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--color-light: hsl(220, 80%, 90%);
+	--color-dark: hsl(220, 80%, 10%);
+	--color-primary: hsl(220, 80%, 50%);
+	--color-secondary: hsl(220, 80%, 30%);
+	--color-tertiary: hsl(220, 80%, 70%);
+	--color-background: hsl(220, 30%, 10%);
+	--color-header: hsl(220, 50%, 30%);
+	--color-header-hover: hsl(220, 50%, 20%);
+	--color-error: hsl(0, 80%, 70%);
+
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	font-family: "Lato", sans-serif;
+	color: var(--color-light);
+	background-color: var(--color-background);
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-header);
+}
+
+header .logo {
+	height: 100%;
+	width: 100%;
+}
+
+.pages {
+	height: 3rem;
+}
+
+.pages ul {
+	display: flex;
+	flex-wrap: nowrap;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.pages a {
+	display: block;
+	padding: 1em;
+	text-align: center;
+	text-decoration: none;
+	color: var(--color-light);
+	transition: 250ms ease-in-out;
+}
+
+.pages a:hover,
+.pages a:focus {
+	background-color: var(--color-header-hover);
+}
+
+#profile {
+	object-fit: cover;
+	height: 1rem;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+
+h1 {
+	font-size: 4rem;
+	color: var(--color-secondary);
+	padding: 1rem;
+	margin: 0;
+}
+
+.hero {
+	background-image: url("/assets/about.png");
+	background-size: cover;
+	height: 500px;
+}
+
+main p {
+	padding-inline: 1rem;
+	font-size: 1.5rem;
+	line-height: 2;
+}
+
+main a {
+	color: inherit;
+}
+
+.row {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card > img {
+	width: 100%;
+	border-radius: 1ch;
+	height: 15rem;
+	object-fit: cover;
+}
+
+.links {
+	display: flex;
+}
+
+footer {
+	padding: 1rem;
+	background: var(--color-dark);
+	color: var(--color-light);
+	text-align: center;
+}
+
+.socials {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	gap: 1rem;
+}
+
+footer a {
+	color: inherit;
+}
+
+@media screen and (max-width: 455px) {
+	header {
+		justify-content: center;
+	}
+
+	.row {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+}
