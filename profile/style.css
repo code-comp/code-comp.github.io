@@ -25,6 +25,10 @@ body {
 	font-family: "Lato", sans-serif;
 	color: var(--color-light);
 	background-color: var(--color-background);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
 }
 
 header {
@@ -69,13 +73,11 @@ header .logo {
 }
 
 main {
-	position: absolute;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	height: calc(100% - 3.5rem);
 	font-size: 1.25em;
+	margin: 1rem;
 }
 
 form {
@@ -237,8 +239,13 @@ footer a {
 }
 
 @media (max-width: 780px) or (max-width: 780px) {
+
+	body {
+		display: block;
+	}
 	main {
 		position: static;
+		margin 0
 		border-top: 1px solid var(--color-light);
 	}
 
