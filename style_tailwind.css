@@ -891,7 +891,11 @@ header .logo {
   padding-left: 0;
 }
 
-#profile {
+.pages [data-page="profile"] {
+  display: none;
+}
+
+.pages [data-page="profile"] img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;

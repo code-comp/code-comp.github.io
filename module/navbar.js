@@ -1,6 +1,7 @@
 import { getCookie } from "./utils.js";
 
-const image = document.querySelector("#profile");
+const profile = document.querySelector(".pages [data-page='profile']");
+const image = profile.querySelector("img");
 const id = getCookie("id");
 const token = getCookie("token");
 
@@ -22,6 +23,7 @@ if (id) {
 
 		const { user } = response;
 		image.src = user?.avatar ?? "";
+		profile.style.display = "block";
 	} catch (error) {
 		console.error(error);
 	}
