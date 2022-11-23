@@ -1,6 +1,6 @@
 import "./module/navbar.js";
 
-if (location.pathname === "/") {
+if (location.pathname === "/" || location.pathname === "/index.html") {
 	import("./module/hero.js");
 
 	AOS.init({
