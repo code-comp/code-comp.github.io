@@ -556,7 +556,7 @@ video {
 }
 
 .fixed {
-  position: fixed;
+  position: absolute;
 }
 
 .absolute {

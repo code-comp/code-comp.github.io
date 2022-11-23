@@ -151,7 +151,7 @@ footer {
 	background: var(--color-dark);
 	color: var(--color-light);
 	text-align: center;
-	position: fixed;
+	position: absolute;
 	inset: auto 0 0 0;
 }
 
