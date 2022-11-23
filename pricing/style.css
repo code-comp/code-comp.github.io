@@ -25,9 +25,6 @@ body {
 	font-family: "Lato", sans-serif;
 	color: var(--color-light);
 	background-color: var(--color-background);
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 }
 
 header {
@@ -150,6 +147,8 @@ footer {
 	background: var(--color-dark);
 	color: var(--color-light);
 	text-align: center;
+	position: fixed;
+	inset: auto 0 0 0;
 }
 
 footer p {
