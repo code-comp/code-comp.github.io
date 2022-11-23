@@ -556,7 +556,7 @@ video {
 }
 
 .fixed {
-  position: absolute;
+  position: fixed;
 }
 
 .absolute {
@@ -838,6 +838,8 @@ body {
   font-family: "Lato", sans-serif;
   color: var(--color-light);
   background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
 }
 
 header {
