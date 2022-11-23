@@ -224,12 +224,6 @@ nav {
 	gap: 1ch;
 }
 
-#profile {
-	object-fit: cover;
-	height: 1rem;
-	vertical-align: middle;
-	border-radius: 50%;
-}
 
 footer {
 	padding: 1ch;

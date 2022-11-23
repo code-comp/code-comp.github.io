@@ -107,12 +107,6 @@ main {
 	margin: auto;
 }
 
-#profile {
-	object-fit: cover;
-	height: 1rem;
-	vertical-align: middle;
-	border-radius: 50%;
-}
 
 .grid {
 	display: grid;

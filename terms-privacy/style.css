@@ -90,13 +90,6 @@ header .logo {
 	border-radius: 50%;
 }
 
-#profile {
-	object-fit: cover;
-	height: 1rem;
-	vertical-align: middle;
-	border-radius: 50%;
-}
-
 main {
 	padding: 1ch 1rem;
 }
