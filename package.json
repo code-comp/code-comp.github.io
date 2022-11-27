@@ -41,7 +41,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.56.1",
-    "three": "^0.145.0"
+    "three": "^0.145.0",
+    "y-codemirror.next": "^0.3.2",
+    "y-webrtc": "^10.2.3",
+    "y-websocket": "^1.4.5",
+    "yjs": "^13.5.42"
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",

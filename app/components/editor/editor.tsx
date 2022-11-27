@@ -1,5 +1,11 @@
+"use client";
+
 import { ChangeEvent, FormEvent, useCallback, useState } from "react";
 import styles from "./editor.module.css";
+
+import { yCollab } from "y-codemirror.next";
+import { WebrtcProvider } from "y-webrtc";
+import * as Y from "yjs";
 
 import { javascript } from "@codemirror/lang-javascript";
 import { python } from "@codemirror/lang-python";
@@ -19,22 +25,49 @@ languages.forEach(language => {
 	}
 });
 
+const yDoc = new Y.Doc();
+// @ts-expect-error
+const provider = new WebrtcProvider("code-comp", yDoc, {
+	signaling: ["ws://localhost:1234"],
+});
+
+const hue = Math.floor(Math.random() * 360);
+provider.awareness.setLocalStateField("user", {
+	name: "Anonymous " + Math.floor(Math.random() * 100),
+	color: `hsl(${hue}, 70%, 30%)`,
+	colorLight: `hsl(${hue}, 70%, 90%)`,
+});
+
 export default function Editor({ onCodeExecuted }: { onCodeExecuted: (result: CodeExecutionResult) => void }) {
-	"use client";
-
 	const [language, setLanguage] = useState("py");
-	const changeLanguage = (event: ChangeEvent<HTMLSelectElement>) => setLanguage(event.target.value);
+	provider.awareness.setLocalStateField("language", language);
+	const changeLanguage = (event: ChangeEvent<HTMLSelectElement>) => {
+		provider.awareness.setLocalStateField("language", event.target.value);
+	};
+	// Keep language in sync with other users
+	provider.awareness.on("change", (event: any) => {
+		const { added, updated } = event;
+		console.log(`Added ${added.length} users, updated ${updated.length} users`);
+		const states = provider.awareness.getStates();
+		[...added, ...updated]
+			.filter((client: any) => client !== provider.awareness.clientID)
+			.forEach((client: any) => {
+				console.log("client", states.get(client));
+				setLanguage(states.get(client)!.language);
+			});
+	});
 
-	const [content, setContent] = useState("");
-	const onEdit = useCallback((value: string) => setContent(value), []);
+	const yText = yDoc.getText("codemirror");
+	const undoManager = new Y.UndoManager(yText);
+
 	const onSubmit = useCallback(
 		async (event: FormEvent) => {
 			event.preventDefault();
-			const result = await executeCode(content);
+			const result = await executeCode(yText.toString(), language);
 			console.log(result);
 			onCodeExecuted(result);
 		},
-		[content, onCodeExecuted],
+		[language, onCodeExecuted, yText],
 	);
 	const [loading, setLoading] = useState(true);
 
@@ -55,11 +88,14 @@ export default function Editor({ onCodeExecuted }: { onCodeExecuted: (result: Co
 					height="100%"
 					width="100%"
 					theme="dark"
-					value={content}
+					value={yText.toString()}
 					autoFocus={true}
-					placeholder={`Write your ${languages.get(language)!.title} code here...`}
-					extensions={[languages.get(language)!.editor!(), EditorView.lineWrapping, oneDark]}
-					onChange={onEdit}
+					extensions={[
+						languages.get(language)!.editor!(),
+						EditorView.lineWrapping,
+						oneDark,
+						yCollab(yText, provider.awareness, { undoManager }),
+					]}
 					onCreateEditor={() => setLoading(false)}
 				/>
 			) : null}

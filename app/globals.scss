@@ -56,6 +56,15 @@ button:hover {
 	display: contents;
 }
 
+.cm-editor {
+	.cm-ySelectionInfo {
+		font-size: inherit;
+		font-family: inherit;
+		padding: 0.5ch 1ch;
+		top: -3ch;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;

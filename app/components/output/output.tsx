@@ -24,7 +24,7 @@ export default function Output({ result }: { result: CodeExecutionResult }) {
 			)}
 			{(result.language || result.version) && (
 				<div className={styles.language}>
-					{languages.get(result.language)} {result.version}
+					{languages.get(result.language)?.title} {result.version}
 				</div>
 			)}
 			{result.success != null ? (
