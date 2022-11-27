@@ -7,18 +7,23 @@ import { oneDark } from "@codemirror/theme-one-dark";
 import { EditorView } from "@codemirror/view";
 import CodeMirror from "@uiw/react-codemirror";
 
-import { languages } from "../../constants";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { languages } from "../../constants";
+
+languages.forEach(language => {
+	if (language.name === "js") {
+		language.editor = javascript;
+	} else if (language.name === "py") {
+		language.editor = python;
+	}
+});
 
 export default function Editor({ onCodeExecuted }: { onCodeExecuted: (result: CodeExecutionResult) => void }) {
 	"use client";
 
 	const [language, setLanguage] = useState("py");
-	const changeLanguage = useCallback(
-		(event: ChangeEvent<HTMLSelectElement>) => setLanguage(event.target.value),
-		[language],
-	);
+	const changeLanguage = (event: ChangeEvent<HTMLSelectElement>) => setLanguage(event.target.value);
 
 	const [content, setContent] = useState("");
 	const onEdit = useCallback((value: string) => setContent(value), []);
@@ -38,24 +43,26 @@ export default function Editor({ onCodeExecuted }: { onCodeExecuted: (result: Co
 			<select className={styles.language} value={language} onChange={changeLanguage}>
 				{[...languages].map(([k, v]) => {
 					return (
-						<option key={k} value={k}>
-							{v}
+						<option key={k} value={k} disabled={!v.editor}>
+							{v.title}
 						</option>
 					);
 				})}
 			</select>
-			<CodeMirror
-				className={styles.editor}
-				height="100%"
-				width="100%"
-				theme="dark"
-				value={content}
-				autoFocus={true}
-				placeholder={`Write your ${languages.get(language)} code here...`}
-				extensions={[python(), EditorView.lineWrapping, oneDark]}
-				onChange={onEdit}
-				onCreateEditor={() => setLoading(false)}
-			/>
+			{languages.get(language)?.editor ? (
+				<CodeMirror
+					className={styles.editor}
+					height="100%"
+					width="100%"
+					theme="dark"
+					value={content}
+					autoFocus={true}
+					placeholder={`Write your ${languages.get(language)!.title} code here...`}
+					extensions={[languages.get(language)!.editor!(), EditorView.lineWrapping, oneDark]}
+					onChange={onEdit}
+					onCreateEditor={() => setLoading(false)}
+				/>
+			) : null}
 			{loading ? (
 				<div className={styles.loading}>
 					<FontAwesomeIcon icon={faSpinner} />
