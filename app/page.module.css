@@ -1,0 +1,10 @@
+.title {
+	text-align: center;
+}
+
+.panels {
+	display: flex;
+	flex: 2;
+	gap: 1ch;
+	margin: 1ch;
+}

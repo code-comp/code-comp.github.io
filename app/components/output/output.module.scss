@@ -1,0 +1,39 @@
+.output {
+	flex: 1;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	display: flex;
+	flex-direction: column;
+	gap: 1ch;
+	align-items: center;
+
+	.output {
+		height: 100%;
+	}
+
+	.language,
+	.status {
+		display: inline-block;
+		justify-content: center;
+		padding: 0.5ch;
+		width: 100%;
+		border-radius: 0.5ch;
+		background: var(--color-light);
+		color: var(--color-dark);
+		fill: var(--color-dark);
+		text-align: center;
+		font-size: 1em;
+	}
+}
+
+.status {
+	.success & {
+		background: var(--color-success);
+		color: var(--color-success-text);
+	}
+
+	.error & {
+		background: var(--color-error);
+		color: var(--color-error-text);
+	}
+}

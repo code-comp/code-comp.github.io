@@ -1,0 +1,17 @@
+.footer {
+	padding: 1ch;
+	font-size: 0.8em;
+	padding: 1rem;
+	background: var(--color-dark);
+	color: var(--color-light);
+	text-align: center;
+	margin-top: auto;
+}
+
+.footer p {
+	margin: 0;
+}
+
+.footer a {
+	color: inherit;
+}
