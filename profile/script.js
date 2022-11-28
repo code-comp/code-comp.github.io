@@ -54,8 +54,8 @@ async function loadData() {
 		password.value = "";
 		confirmPassword.value = "";
 
-		score.textContent = user.statistics.score;
-		challenges.textContent = user.statistics.challenges;	
+		score.textContent = user.challenges?.reduce((total, challenge) => total + challenge.score, 0);
+		challenges.textContent = user.statistics.challenges?.length || 0;
 	} catch (error) {
 		awn.alert(error.message);
 		console.error(error);
