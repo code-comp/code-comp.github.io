@@ -127,6 +127,9 @@ main {
 	grid-template-columns: auto auto;
 }
 
+#stats-container h2 {
+	margin: 0;
+}
 
 #score {
 	background-color: var(--color-header);
@@ -287,8 +290,6 @@ footer a {
 	header {
 		justify-content: center;
 	}
-
-	
 }
 
 @media screen and (max-width: 780px) {
