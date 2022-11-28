@@ -49,60 +49,87 @@
 			</nav>
 		</header>
 		<main>
-			<form>
-				<fieldset disabled>
-					<label for="avatar">Avatar</label>
-					<div class="avatar">
-						<i class="fas fa-user"></i>
-						<img src="" alt="Profile" width="100" height="100" />
-						<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
-					</div>
-					<label for="username">Username:</label>
-					<input
-						type="text"
-						id="username"
-						name="username"
-						autocomplete="username"
-						minlength="3"
-						maxlength="20"
-						pattern="^[a-zA-Z0-9_.-]+$"
-						required
-					/>
-					<label for="firstName">First Name:</label>
-					<input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
-					<label for="lastName">Last Name:</label>
-					<input type="text" id="lastName" name="lastName" autocomplete="family-name" required />
-					<label for="email">Email Address:</label>
-					<input type="email" id="email" name="email" autocomplete="email" />
-					<label for="password">Password:</label>
-					<input
-						type="password"
-						id="password"
-						name="password"
-						placeholder="••••••••"
-						autocomplete="new-password"
-						minlength="8"
-						maxlength="32"
-						pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,32}$"
-					/>
-					<label for="confirmPassword">Confirm Password:</label>
-					<input
-						type="password"
-						id="confirmPassword"
-						name="confirmPassword"
-						placeholder="••••••••"
-						autocomplete="new-password"
-						minlength="8"
-						maxlength="32"
-						pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,32}$"
-					/>
-				</fieldset>
-				<nav>
-					<button id="edit" type="button">Edit</button>
-					<button id="save" type="submit">Save</button>
-				</nav>
-			</form>
+			<div class="container">
+				<form>
+					<fieldset disabled>
+						<label for="avatar">Avatar</label>
+						<div class="avatar">
+							<i class="fas fa-user"></i>
+							<img src="" alt="Profile" width="100" height="100" />
+							<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+						</div>
+						<label for="username">Username:</label>
+						<input
+							type="text"
+							id="username"
+							name="username"
+							autocomplete="username"
+							minlength="3"
+							maxlength="20"
+							pattern="^[a-zA-Z0-9_.-]+$"
+							required
+						/>
+						<label for="firstName">First Name:</label>
+						<input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
+						<label for="lastName">Last Name:</label>
+						<input type="text" id="lastName" name="lastName" autocomplete="family-name" required />
+						<label for="email">Email Address:</label>
+						<input type="email" id="email" name="email" autocomplete="email" />
+						<label for="password">Password:</label>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="••••••••"
+							autocomplete="new-password"
+							minlength="8"
+							maxlength="32"
+							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,32}$"
+						/>
+						<label for="confirmPassword">Confirm Password:</label>
+						<input
+							type="password"
+							id="confirmPassword"
+							name="confirmPassword"
+							placeholder="••••••••"
+							autocomplete="new-password"
+							minlength="8"
+							maxlength="32"
+							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,32}$"
+						/>
+					</fieldset>
+					<nav>
+						<button id="edit" type="button">Edit</button>
+						<button id="save" type="submit">Save</button>
+					</nav>
+				</form>
+				<section id="stats">
+					<h2>Statistics:</h2>
+					<div id="stats-container">
+						<div class="stat">
+							<h3>0</h3>
+							<p>Points</p>
+						</div>
+						<div class="stat">
+							<h3>0</h3>
+							<p>Challenges Completed</p>
+						</div>
+						<div class="stat">
+							<h3>0</h3>
+							<p>Friends</p>
+						</div>
+						<div class="stat">
+							<h3>0</h3>
+							<p>Posts</p>
+						</div>
+					
+					
+					
+				</section>
+			</div>
+			
 		</main>
+			
 		<footer>
 			<p>
 				Copyright &copy; 2022 Code Comp. Designed by <strong>Group 11</strong> for the SEG 2900 course at

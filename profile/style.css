@@ -101,6 +101,32 @@ main {
 	height: 100%;
 }
 
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+#stats {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 1ch;
+	background-color: var(--color-header);
+	padding: 1rem;
+	border-radius: 1ch;
+	width: clamp(20rem, 50%, 40rem);
+	margin-top: 1rem;
+}
+
+#stats-container {
+	text-align: center;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
 form {
 	box-sizing: border-box;
 	display: flex;
@@ -248,6 +274,8 @@ footer a {
 	header {
 		justify-content: center;
 	}
+
+	
 }
 
 @media screen and (max-width: 780px) {
@@ -267,6 +295,15 @@ footer a {
 	}
 
 	fieldset {
+		grid-template-columns: 1fr;
+	}
+
+	#stats {
+		width: 100%;
+		border-radius: 0;
+	}
+
+	#stats-container {
 		grid-template-columns: 1fr;
 	}
 }
