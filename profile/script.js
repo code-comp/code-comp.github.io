@@ -17,6 +17,8 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirmPassword");
 const edit = document.querySelector("#edit");
+const score = document.querySelector("#score");
+const challenges = document.querySelector("#challenges");
 
 const id = getCookie("id");
 const token = getCookie("token");
@@ -42,6 +44,14 @@ async function loadData() {
 		}
 
 		const { user } = response;
+		// temp
+		var statistics={
+			"score": 1,
+			"challenges":1
+		}
+		user['statistics']=statistics;
+		console.log(user);
+
 		filePicker.value = "";
 		image.src = user.avatar || "";
 		username.value = user.username || "";
@@ -50,6 +60,9 @@ async function loadData() {
 		email.value = user.email || "";
 		password.value = "";
 		confirmPassword.value = "";
+
+		score.value = user.statistics.score;
+		challenges.value = user.statistics.challenges;	
 	} catch (error) {
 		awn.alert(error.message);
 		console.error(error);

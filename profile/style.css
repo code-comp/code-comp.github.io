@@ -127,6 +127,18 @@ main {
 	grid-template-columns: auto auto;
 }
 
+#score {
+	background-color: var(--color-header);
+	color: var(--color-light);
+	text-align: center;
+}
+
+#challenges {
+	background-color: var(--color-header);
+	color: var(--color-light);
+	text-align: center;
+}
+
 form {
 	box-sizing: border-box;
 	display: flex;
