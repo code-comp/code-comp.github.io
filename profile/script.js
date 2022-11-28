@@ -44,13 +44,6 @@ async function loadData() {
 		}
 
 		const { user } = response;
-		// temp
-		var statistics={
-			"score": 1,
-			"challenges":1
-		}
-		user['statistics']=statistics;
-		console.log(user);
 
 		filePicker.value = "";
 		image.src = user.avatar || "";
@@ -61,8 +54,8 @@ async function loadData() {
 		password.value = "";
 		confirmPassword.value = "";
 
-		score.value = user.statistics.score;
-		challenges.value = user.statistics.challenges;	
+		score.textContent = user.statistics.score;
+		challenges.textContent = user.statistics.challenges;	
 	} catch (error) {
 		awn.alert(error.message);
 		console.error(error);

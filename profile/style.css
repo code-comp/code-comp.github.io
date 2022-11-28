@@ -127,6 +127,7 @@ main {
 	grid-template-columns: auto auto;
 }
 
+
 #score {
 	background-color: var(--color-header);
 	color: var(--color-light);
